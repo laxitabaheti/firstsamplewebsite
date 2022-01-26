@@ -6,8 +6,8 @@ import { useState } from "react";
 // import ErrorModal from "/src/components/UI/ErrorModal/ErrorModal";
 
 const LogIn = (props) => {
-  const [enteredemail, setEnteredEmail] = useState(" ");
-  const [enteredpassword, setEnteredPassword] = useState(" ");
+  const [enteredemail, setEnteredEmail] = useState("");
+  const [enteredpassword, setEnteredPassword] = useState("");
   // const [error, SetError] = useState(null);
   // const [emailValid,SetemailValid]=useState(false)
   // const [passwordValid,SetpasswordValid]=useState(false)
@@ -31,7 +31,7 @@ const LogIn = (props) => {
   };
   const SubmitHandler = (event) => {
     event.preventDefault();
-    console.log(enteredemail, enteredpassword);
+    props.onLogin(enteredemail, enteredpassword);
   };
 
   return (

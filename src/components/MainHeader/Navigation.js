@@ -4,11 +4,11 @@ const Navigation = (props) => {
   return (
     <nav className={styles.navBar}>
       <ul className={styles.ul}>
-        <li className={styles.li}>User</li>
-        <li className={styles.li}>Admin</li>
-        <li className={styles.li}>
+       {props.isLoggedin &&(<li className={styles.li}>User</li>)}
+        {props.isLoggedin &&(<li className={styles.li}>Admin</li>)}
+        {props.isLoggedin && (<li className={styles.li}>
           <Button className={styles.button}>Log out</Button>
-        </li>
+        </li>)}
       </ul>
     </nav>
   );
