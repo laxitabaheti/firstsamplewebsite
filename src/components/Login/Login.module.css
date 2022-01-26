@@ -1,5 +1,9 @@
 .loginPortal {
-  margin: 30px;
+  justify-content: center;
+  align-items: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  margin: 150px;
   padding: 20px;
   /* align-content: left; */
   /* background-color: rgb(43, 44, 43); */
@@ -7,31 +11,45 @@
 }
 
 .email label {
+  display: inline-block;
   padding: 10px;
-  display: inline;
   margin: 5px;
 }
 .email input {
+  border: solid rgb(160, 159, 159) 1px;
   margin-left: 20px;
+  display: inline-block;
   width: 90%;
+  padding: 5px;
+  /* box-sizing: border-box; */
 }
+.email input:focus {
+  background-color: rgb(236, 130, 236);
+  border: 3px soild rgb(39, 8, 39);
+}
+
 .password label {
-  display: inline;
+  display: inline-block;
   padding: 10px;
   margin: 5px;
 }
 .password input {
-  margin-left: 2px;
+  border: solid rgb(160, 159, 159) 1px;
+  margin-left: 20px;
+  display: inline-block;
   width: 90%;
+  padding: 5px;
 }
+
 .loginButton {
-  margin: 10px;
+  margin: 15px;
   text-align: center;
 }
 .Button {
   border-radius: 30px;
   padding: 10px;
   width: 100px;
-
+  font-weight: bold;
+  font-size: 16px;
   /* background-color: rgb(226, 87, 115); */
 }
