@@ -21,9 +21,15 @@ const LogIn = (props) => {
   };
 
   useEffect(() => {
-    setformvalid(
-      enteredemail.includes("@") && enteredpassword.trim().length > 7
-    );
+    const identifier = setTimeout(() => {
+      setformvalid(
+        enteredemail.includes("@") && enteredpassword.trim().length > 7
+      );
+    }, 500);
+
+    return () => {
+      clearTimeout(identifier);
+    };
   }, [enteredemail, enteredpassword]);
 
   const SubmitHandler = (event) => {
