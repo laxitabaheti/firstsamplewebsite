@@ -4,12 +4,10 @@
   left: 0;
   width: 100%;
   color: white;
-  background-color: darkmagenta;
-  /* margin: 0px; */
+  background-color: rgb(55, 11, 97);
   padding: 0 20px;
   display: flex;
   height: 80px;
-  /* float: left; */
   justify-content: space-evenly;
   font-size: 20px;
   align-items: center;
