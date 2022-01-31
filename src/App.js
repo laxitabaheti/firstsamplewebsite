@@ -1,35 +1,19 @@
-import { useState, useEffect, Fragment } from "react";
+import { Fragment,useContext } from "react";
 import "./styles.css";
+import AuthContext from "./components/Store/AuthContext";
 import MainHeader from "./components/MainHeader/MainHeader";
 import LogIn from "./components/Login/Login";
 import Home from "./components/Home/Home";
 
 export default function App() {
-  const [loginValid, setLoginValid] = useState(false);
 
-  const LoginHandler = (em, pw) => {
-    localStorage.setItem("isLoggedIn", "1");
-    setLoginValid(true);
-  };
-
-  useEffect(() => {
-    const storeduserLoggedInInfo = localStorage.getItem("isLoggedIn");
-    if (storeduserLoggedInInfo === "1") {
-      setLoginValid(true);
-    }
-  }, []);
-
-  const Logouthandler = () => {
-    setLoginValid(false);
-    localStorage.removeItem("isLoggedIn");
-  };
-
+const ctx=useContext(AuthContext)
   return (
     <Fragment>
-      <MainHeader isAuthenticated={loginValid} onLogOut={Logouthandler} />
+      <MainHeader/>
       <main>
-        {!loginValid && <LogIn onLogin={LoginHandler} />}
-        {loginValid && <Home />}
+        {!ctx.isLoggedin && <LogIn/>}
+        {ctx.isLoggedin && <Home/>}
       </main>
     </Fragment>
   );

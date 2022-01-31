@@ -1,11 +1,15 @@
 import Card from "/src/components/UI/Card/Card.js";
+import AuthContext from "/src/components/Store/AuthContext";
 import Button from "/src/components/UI/Button/Button.js";
 import styles from "./Login.module.css";
 import Wrapper from "/src/components/UI/Helpers/Wrapper.js";
-import { useEffect, useState } from "react";
-// import ErrorModal from "/src/components/UI/ErrorModal/ErrorModal";
 
+import { useEffect, useState, useContext } from "react";
+// import ErrorModal from "/src/components/UI/ErrorModal/ErrorModal";
 const LogIn = (props) => {
+
+ 
+
   const [enteredemail, setEnteredEmail] = useState("");
   const [enteredpassword, setEnteredPassword] = useState("");
   // const [emailValid,SetemailValid]=useState(false)
@@ -31,10 +35,10 @@ const LogIn = (props) => {
       clearTimeout(identifier);
     };
   }, [enteredemail, enteredpassword]);
-
+  const ctx=useContext(AuthContext);
   const SubmitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(enteredemail, enteredpassword);
+    ctx.onLogin(enteredemail, enteredpassword);
   };
 
   return (

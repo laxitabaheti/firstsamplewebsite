@@ -7,10 +7,7 @@ const MainHeader = (props) => {
   return (
     <header className={styles.header}>
       <h2>NAME OF THE APPLICATION</h2>
-      <Navigation
-        onLogOut={props.onLogOut}
-        isLoggedin={props.isAuthenticated}
-      />
+      <Navigation/>
     </header>
   );
 };
