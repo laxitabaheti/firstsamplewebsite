@@ -8,12 +8,12 @@
   /* margin: 0px; */
   padding: 0 20px;
   display: flex;
-  height: 100px;
+  height: 80px;
   /* float: left; */
   justify-content: space-evenly;
   font-size: 20px;
   align-items: center;
 }
 .header h2 {
-  padding: 6px;
+  padding: 4px;
 }

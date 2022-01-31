@@ -5,12 +5,14 @@ import AuthContext from "../Store/AuthContext";
 
 const Navigation = (props) => {
   const ctx = useContext(AuthContext);
-  
+
   return (
     <nav className={styles.navBar}>
       <ul className={styles.ul}>
         {ctx.isLoggedin && <li className={styles.li}>User</li>}
+
         {ctx.isLoggedin && <li className={styles.li}>Admin</li>}
+
         {ctx.isLoggedin && (
           <li className={styles.li}>
             <Button onClick={ctx.isLoggedout} className={styles.button}>
